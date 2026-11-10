@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "urbiva-ai"
+version = "0.1.0"
+description = "Research code for UVA-Net S10, a lightweight urban accessibility vision model."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Maximilian team" }]
+classifiers = [
+  "License :: Other/Proprietary License",
+  "Programming Language :: Python :: 3",
+  "Private :: Do Not Upload",
+]
+dependencies = [
+  "numpy>=1.26",
+  "PyYAML>=6.0",
+  "Pillow>=10.3",
+]
+
+[project.optional-dependencies]
+torch = ["torch>=2.4"]
+onnx = ["onnx>=1.16", "onnxruntime>=1.18"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+urbiva-ai = "urbiva_ai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B"]
+ignore = ["E501"]

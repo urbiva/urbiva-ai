@@ -1,1 +1,1 @@
-"""urbiva_ai.evaluation: placeholder package. No implementation in the setup phase; see docs/."""
+"""Evaluation: metrics (NumPy) and report generation."""

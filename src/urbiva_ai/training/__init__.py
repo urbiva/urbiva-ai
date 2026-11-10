@@ -1,1 +1,1 @@
-"""urbiva_ai.training: placeholder package. No implementation in the setup phase; see docs/."""
+"""Training: compute budget guard (budget) and the training loop (trainer, requires PyTorch)."""

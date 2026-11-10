@@ -1,5 +1,491 @@
-Copyright (c) 2026 Urbiva. All rights reserved.
+URBIVA PROPRIETARY LICENSE
+Version 1.0, 10 November 2026
+All rights reserved
 
-This repository and its contents are proprietary and confidential.
-No license is granted to use, copy, modify, merge, publish, distribute,
-sublicense or sell any part of it without prior written permission from Urbiva.
+Copyright (c) 2026 the members of the team "Maximilian", the creators of Urbiva.
+
+IMPORTANT. READ CAREFULLY. This License governs every access to and use of the
+Work defined below. The Work is published so that it can be viewed. It is not
+open source, and it is not free software. Except for the limited permissions
+expressly stated in Section 3, no right of any kind is granted. If you do not
+accept this License, your only permitted acts are those in Section 3.1 and
+Section 5.
+
+
+SECTION 1. DEFINITIONS
+
+1.1  "Licensor" means the natural persons who are members of the team known as
+     "Maximilian" and who created Urbiva, acting jointly as co-authors and
+     holders of all rights in the Work, together with their lawful successors
+     and assignees. Any one member may give notices and enforce this License
+     on behalf of all members.
+
+1.2  "Urbiva" means the project, product, name and brand known as Urbiva,
+     including the applications, research, documentation and visual identity
+     published in the GitHub organization at https://github.com/urbiva.
+
+1.3  "Work" means everything published in any repository of the GitHub
+     organization "urbiva", in every version, branch, tag, commit and release,
+     including without limitation:
+     (a) source code, object code, build scripts, configuration and tests
+         ("Software");
+     (b) documentation, specifications, architecture decision records, texts,
+         diagrams and translations ("Documentation");
+     (c) research plans, model architectures, configurations, data schemas,
+         provenance templates and evaluation protocols ("Research Materials");
+     (d) logos, icons, wordmarks, colour systems, design tokens, illustrations,
+         screenshots, social preview images, banners and other visual material
+         ("Brand Assets");
+     (e) compilations, structures, sequences, selections and arrangements of
+         any of the above, and any database contained in them;
+     but excluding Third-Party Components (Section 8).
+
+1.4  "Derivative Work" means any work that is based on, derived from,
+     translated from, adapted from, or incorporates the Work or any part of it,
+     including any modification, port, rewrite in another language, model
+     trained on or distilled from the Work, and any work that reproduces its
+     expressive structure, sequence or organisation.
+
+1.5  "You" means any natural or legal person who accesses, views, downloads,
+     clones, forks or otherwise obtains any part of the Work.
+
+1.6  "Commercial Purpose" means any purpose intended for or directed toward
+     direct or indirect commercial advantage or monetary compensation,
+     including use within a business, a public authority, or a paid service.
+
+1.7  "Consumer" means a natural person acting for purposes outside their
+     trade, business, craft or profession.
+
+1.8  "Applicable Law" means the law that governs this License under Section 15,
+     together with any provision of other law that cannot be derogated from by
+     agreement and that applies to You.
+
+
+SECTION 2. OWNERSHIP AND RESERVATION OF RIGHTS
+
+2.1  The Work is protected by the Law of the Republic of Azerbaijan No. 115-IQ
+     of 5 June 1996 "On Copyright and Related Rights" (as amended), the Civil
+     Code of the Republic of Azerbaijan, the Law of the Republic of Azerbaijan
+     "On Legal Protection of Compilations of Data", the Law of the Republic of
+     Azerbaijan "On Enforcement of Intellectual Property Rights and Fight
+     against Piracy", and by international treaties, including the Berne
+     Convention for the Protection of Literary and Artistic Works, the WIPO
+     Copyright Treaty and the TRIPS Agreement, as well as by the copyright law
+     of every country in which protection is claimed.
+
+2.2  The Licensor owns all right, title and interest in the Work, including
+     all property (economic) rights and, as authors, all personal non-property
+     (moral) rights. Computer programs in the Work are protected as literary
+     works.
+
+2.3  All rights not expressly granted in Section 3 are reserved. No right or
+     licence is granted by implication, estoppel, exhaustion, course of
+     dealing or otherwise. Publication of the Work in a public repository is
+     not a dedication to the public domain, does not constitute an open source
+     licence, and does not waive any right.
+
+2.4  No sale. The Work is licensed, not sold. Obtaining a copy does not
+     transfer ownership of any intellectual property right.
+
+
+SECTION 3. LIMITED PERMISSIONS
+
+3.1  Viewing. You may view the Work on github.com and read it in a web browser
+     for the purpose of learning about Urbiva, evaluating it, or reporting a
+     problem.
+
+3.2  GitHub platform rights. Because the Work is published in public
+     repositories, You may use the functionality of the GitHub service to view
+     the Work and to fork it within the GitHub service, to the extent and only
+     for as long as the GitHub Terms of Service require the Licensor to permit
+     this. A fork is a copy of the Work and remains subject to this License in
+     full. Forking grants no further right to use, modify, build, run, deploy
+     or distribute the Work outside of viewing.
+
+3.3  Evaluation. You may clone the Work and build and run the Software
+     locally, on equipment You control, solely to evaluate it for a
+     non-commercial purpose, for a period not exceeding ninety (90) days from
+     first download, provided that You do not make it available to any other
+     person, do not connect it to production data or real users, and delete
+     all copies at the end of the period. Evaluation copies may not be used to
+     route, inform or advise real persons about real places.
+
+3.4  Contribution. You may modify the Work solely to prepare a contribution
+     that You submit to the Licensor through a pull request or issue in a
+     repository of the urbiva organization. Section 9 applies to every
+     contribution.
+
+3.5  Quotation. You may quote short excerpts of the Documentation, with clear
+     attribution "Urbiva, (c) Maximilian team", for criticism, review,
+     scientific, educational or news reporting purposes, to the extent
+     justified by the purpose and permitted by Applicable Law.
+
+3.6  Conditions. Every permission in this Section is personal, revocable,
+     non-exclusive, non-transferable, non-sublicensable, worldwide and free of
+     charge, and is conditional on Your compliance with this License. No
+     permission in this Section allows use for a Commercial Purpose.
+
+
+SECTION 4. RESTRICTIONS
+
+Except as expressly permitted in Section 3 or Section 5, You must not, and
+must not allow or assist any other person to:
+
+4.1  copy, reproduce, download in bulk, mirror or archive the Work, in whole or
+     in part, by any means or in any form;
+4.2  modify, translate, adapt, arrange or create any Derivative Work;
+4.3  distribute, publish, sell, rent, lend, lease, license, sublicense, make
+     available to the public, communicate to the public, import or otherwise
+     transfer the Work or any Derivative Work;
+4.4  use the Work, or run the Software, for any Commercial Purpose, in
+     production, or as part of a hosted, managed or software-as-a-service
+     offering;
+4.5  use any part of the Work, including its code, documentation, designs or
+     Research Materials, to train, fine-tune, evaluate, distill or benchmark
+     any machine learning or artificial intelligence system, or include it in
+     any dataset, except where text and data mining is expressly permitted by
+     mandatory Applicable Law and the Licensor has not reserved it; the
+     Licensor hereby expressly reserves text and data mining rights in an
+     appropriate, machine-readable and human-readable manner;
+4.6  use any Brand Asset, the name "Urbiva", or any confusingly similar name,
+     logo or get-up, in any product, service, domain name, social media
+     account, company name or marketing, or in any way that suggests
+     endorsement by, affiliation with, or origin from the Licensor;
+4.7  remove, alter or obscure any copyright notice, licence text, attribution,
+     disclaimer or other proprietary marking;
+4.8  circumvent any technical measure that protects the Work;
+4.9  use the Work in breach of any law, including data protection,
+     accessibility, consumer protection, export control and sanctions law;
+4.10 use the Work to make decisions that affect the safety, health, mobility
+     or legal rights of any real person;
+4.11 represent that any result, figure, route, metric or estimate produced by
+     the Work describes a real place, a real network or real people. All data
+     shipped with the Work is invented sample data unless expressly stated
+     otherwise.
+
+
+SECTION 5. STATUTORY RIGHTS THAT CANNOT BE EXCLUDED
+
+5.1  Nothing in this License excludes or restricts any act that a lawful user
+     is entitled to perform under mandatory law, including:
+     (a) under the law of the Republic of Azerbaijan, any free use of a work
+         permitted without the consent of the author, including the acts that
+         the person lawfully possessing a copy of a computer program or
+         database may perform under the Law "On Copyright and Related Rights";
+     (b) where Directive 2009/24/EC of the European Parliament and of the
+         Council of 23 April 2009 on the legal protection of computer programs,
+         as implemented in the law of a Member State, applies to You as a
+         person having a right to use a copy of the Software:
+         (i)   making a back-up copy in so far as it is necessary for that use
+               (Article 5(2));
+         (ii)  observing, studying or testing the functioning of the Software
+               to determine the ideas and principles that underlie any of its
+               elements, while performing the acts of loading, displaying,
+               running, transmitting or storing that You are entitled to do
+               (Article 5(3));
+         (iii) decompilation within the strict limits and conditions of
+               Article 6, for the sole purpose of achieving the interoperability
+               of an independently created program;
+         (iv)  any act under Article 5(1) that cannot be excluded by contract
+               under Applicable Law, including the correction of errors;
+     (c) where Directive 96/9/EC on the legal protection of databases applies,
+         the acts that a lawful user is entitled to perform under its Articles
+         6(1) and 8;
+     (d) any exception or limitation for quotation, criticism, review,
+         teaching, scientific research, accessibility for persons with
+         disabilities, or news reporting that mandatory Applicable Law grants.
+
+5.2  The exercise of any right under Section 5.1 is limited to what that law
+     allows, must not unreasonably prejudice the Licensor's legitimate
+     interests or conflict with the normal exploitation of the Work, and does
+     not authorise any other act restricted by this License. Information
+     obtained under Section 5.1(b)(iii) must not be used for goals other than
+     interoperability, given to others except when necessary for
+     interoperability, or used to develop a substantially similar program.
+
+5.3  Any provision of this License that is contrary to a right described in
+     this Section shall be read as not applying to that right, and to that
+     extent only.
+
+
+SECTION 6. BRAND ASSETS AND NAMES
+
+6.1  "Urbiva", the Urbiva logo, the Urbiva icon and the Urbiva wordmark are
+     identifiers of the Licensor. This License grants no right to use them,
+     whether or not they are registered as trade marks in any jurisdiction.
+     The Licensor reserves all rights to register and enforce them.
+
+6.2  You may refer to Urbiva by name in plain text, without any logo or
+     stylisation, solely to identify the Work truthfully, for example in a
+     review or citation, provided that You do not suggest endorsement.
+
+
+SECTION 7. DATA PROTECTION AND RESPONSIBLE USE
+
+7.1  The Work contains no personal data of real persons. Images, places,
+     routes, barriers and figures are invented sample data.
+
+7.2  If You process personal data with any part of the Work under a separate
+     written agreement with the Licensor, You act as controller (owner of
+     personal data) for that processing and are solely responsible for
+     compliance with the Law of the Republic of Azerbaijan No. 998-IIIQ of 11
+     May 2010 "On Personal Data", Regulation (EU) 2016/679 (General Data
+     Protection Regulation) and any other applicable data protection law,
+     including transparency, lawful basis, data minimisation, security,
+     registration and cross-border transfer requirements.
+
+7.3  The Software can send images to a third-party artificial intelligence
+     service when an operator configures it to do so. Any such configuration
+     is the sole responsibility of the operator, who must inform the persons
+     concerned and comply with that service's terms and with Applicable Law.
+
+7.4  Research Materials describe planned research. They contain no trained
+     model, no model weights and no measured results. Anyone who later places
+     an artificial intelligence system on the market or puts it into service
+     is responsible for complying with Regulation (EU) 2024/1689 (Artificial
+     Intelligence Act) and any other applicable law.
+
+
+SECTION 8. THIRD-PARTY COMPONENTS
+
+8.1  Some files in the Work are owned by third parties and are distributed
+     under their own licences ("Third-Party Components"), for example fonts
+     licensed under the SIL Open Font License 1.1 and software packages listed
+     in a package manifest. Each repository lists its Third-Party Components
+     in its NOTICE file.
+
+8.2  Third-Party Components are governed solely by their own licences. This
+     License neither restricts any right those licences grant nor grants any
+     right in them. If this License conflicts with such a licence for a
+     Third-Party Component, that licence prevails for that component.
+
+
+SECTION 9. CONTRIBUTIONS
+
+9.1  By submitting any code, documentation, design, data, issue text, comment
+     or other material to a repository of the urbiva organization (a
+     "Contribution"), You represent that it is Your original creation or that
+     You have the right to submit it, that it does not contain personal data of
+     third parties without a lawful basis, and that it does not infringe any
+     third party right.
+
+9.2  You grant the Licensor a perpetual, irrevocable, worldwide, exclusive
+     (where permitted by law, otherwise non-exclusive), royalty-free, fully
+     paid licence, with the right to grant sublicences through multiple tiers,
+     to use, reproduce, modify, adapt, translate, publish, distribute, make
+     available and otherwise exploit the Contribution by any means and in any
+     form now known or later developed, for any purpose, including under
+     licence terms different from this License.
+
+9.3  To the extent permitted by Applicable Law, You consent to the Licensor
+     making modifications to the Contribution and to publishing it without
+     attribution, and You agree not to assert personal non-property (moral)
+     rights against the Licensor or its licensees. Where such rights cannot be
+     waived, this Section is limited accordingly.
+
+9.4  The Licensor has no obligation to accept, use, credit or compensate any
+     Contribution.
+
+
+SECTION 10. NO WARRANTY
+
+10.1 To the maximum extent permitted by Applicable Law, the Work is provided
+     "AS IS" and "AS AVAILABLE", with all faults, and without warranty or
+     condition of any kind, express or implied, including any warranty of
+     merchantability, satisfactory quality, fitness for a particular purpose,
+     accuracy, accessibility, title, non-infringement, availability or
+     security.
+
+10.2 In particular, routes, reachability figures, barrier classifications,
+     artificial intelligence estimates and impact simulations produced by the
+     Work are illustrative, are based on invented sample data, and must not be
+     relied on for navigation, safety, accessibility, planning, investment or
+     any other decision.
+
+
+SECTION 11. LIMITATION OF LIABILITY
+
+11.1 To the maximum extent permitted by Applicable Law, the Licensor shall not
+     be liable to You for any damages or losses of any kind arising out of or
+     in connection with this License or the Work, whether in contract, tort
+     (delict), statutory duty or otherwise, including loss of profit, revenue,
+     data, goodwill or business opportunity, and indirect, incidental,
+     special, consequential, exemplary or punitive damages, even if advised of
+     their possibility.
+
+11.2 Where liability cannot be excluded but may be limited, the Licensor's
+     total aggregate liability shall not exceed one hundred Azerbaijani manat
+     (AZN 100) or its equivalent.
+
+11.3 Nothing in this License excludes or limits liability that cannot be
+     excluded or limited under Applicable Law, including liability for death
+     or personal injury caused by negligence, for intentional misconduct or
+     gross negligence, for fraud, or under mandatory product liability law,
+     and nothing affects the statutory rights of a Consumer.
+
+
+SECTION 12. INDEMNITY
+
+You shall indemnify and hold harmless the Licensor against all claims, losses,
+damages, costs and reasonable legal fees arising from Your breach of this
+License or from any use of the Work not permitted by it, except to the extent
+that mandatory law protecting Consumers does not allow such an obligation.
+
+
+SECTION 13. TERM AND TERMINATION
+
+13.1 This License applies from the moment You first access the Work and
+     continues for the full term of protection of the rights in the Work.
+
+13.2 Every permission granted to You terminates automatically and without
+     notice if You breach any term of this License. The Licensor may also
+     revoke the permissions in Section 3.3 to 3.5 at any time by written
+     notice or by publishing a new version of this License.
+
+13.3 On termination You must stop all use and permanently delete every copy
+     of the Work and of any Derivative Work in Your possession or control,
+     except copies You are required to keep by law.
+
+13.4 Sections 1, 2, 4, 5, 6, 8 to 12 and 14 to 18 survive termination.
+
+
+SECTION 14. ENFORCEMENT AND REMEDIES
+
+14.1 Any use of the Work outside this License is an infringement of the
+     Licensor's rights and may lead to civil, administrative and criminal
+     liability under Applicable Law.
+
+14.2 The Licensor is entitled to every remedy available under Applicable Law,
+     including injunctions, seizure and destruction of infringing copies,
+     damages or statutory compensation, recovery of profits, publication of
+     the decision, and reimbursement of costs.
+
+14.3 You acknowledge that a breach of Sections 4 or 6 may cause irreparable
+     harm for which damages would not be an adequate remedy.
+
+
+SECTION 15. GOVERNING LAW
+
+15.1 This License, and any non-contractual obligation arising out of or in
+     connection with it, is governed by the law of the Republic of Azerbaijan,
+     excluding its rules on conflict of laws.
+
+15.2 The United Nations Convention on Contracts for the International Sale of
+     Goods does not apply.
+
+15.3 Questions of the existence, validity, scope and infringement of
+     intellectual property rights are governed by the law of the country for
+     which protection is claimed, where mandatory law so requires.
+
+15.4 If You are a Consumer habitually resident in a Member State of the
+     European Union, the choice of law in Section 15.1 does not deprive You of
+     the protection afforded to You by provisions of the law of that Member
+     State that cannot be derogated from by agreement, in accordance with
+     Article 6(2) of Regulation (EC) No 593/2008 (Rome I).
+
+15.5 Where a mandatory rule of European Union law or of the law of a Member
+     State applies to You, including the rights in Section 5 and the General
+     Data Protection Regulation, this License shall be applied consistently
+     with that rule.
+
+
+SECTION 16. DISPUTE RESOLUTION
+
+16.1 Any dispute, controversy or claim arising out of or in connection with
+     this License or the Work, including any question regarding its existence,
+     validity, interpretation, performance, breach or termination, and any
+     non-contractual claim, shall be referred to and finally resolved by
+     arbitration administered by the Baku Arbitration Centre (BAC, also
+     referred to as Baku International Arbitration Centre) under its
+     Arbitration Rules in force on the date on which the request for
+     arbitration is filed, which Rules are deemed incorporated by reference.
+
+16.2 The seat (legal place) of arbitration shall be Baku, Republic of
+     Azerbaijan. The tribunal shall consist of one arbitrator, unless the
+     amount in dispute exceeds the equivalent of AZN 500,000, in which case it
+     shall consist of three arbitrators. The language of the arbitration shall
+     be English. Expedited procedure provisions of the Rules apply where their
+     conditions are met.
+
+16.3 The law governing this arbitration agreement is the law of the Republic
+     of Azerbaijan, including the Law of the Republic of Azerbaijan "On
+     Arbitration". The award shall be final and binding, and judgment on it
+     may be entered and enforced in any court having jurisdiction, including
+     under the Convention on the Recognition and Enforcement of Foreign
+     Arbitral Awards (New York, 1958).
+
+16.4 Nothing in this Section prevents the Licensor from seeking interim or
+     conservatory measures, including injunctions and the seizure of
+     infringing copies, from any competent court, or from bringing
+     infringement proceedings in the courts of any country in which an
+     infringement occurs.
+
+16.5 If You are a Consumer, this Section applies only to the extent permitted
+     by mandatory law. A Consumer habitually resident in a Member State of the
+     European Union may bring proceedings in, and may only be sued in, the
+     courts of the Member State in which the Consumer is domiciled, in
+     accordance with Articles 17 to 19 of Regulation (EU) No 1215/2012
+     (Brussels I bis), unless an agreement entered into after the dispute has
+     arisen provides otherwise.
+
+
+SECTION 17. NOTICES AND CONTACT
+
+17.1 Requests for permissions beyond this License, including commercial
+     licences, partnerships and press use of Brand Assets, must be sent to the
+     owners of the GitHub organization "urbiva" through GitHub.
+
+17.2 Legal notices to the Licensor are validly given by opening an issue in the
+     repository https://github.com/urbiva/.github with the title beginning
+     "Legal notice:", stating only the nature of the notice and a means of
+     contact, and without including confidential or personal data. Security
+     reports must use GitHub private vulnerability reporting as described in
+     SECURITY.md.
+
+17.3 A permission is effective only if it is given in writing (including in
+     electronic form through GitHub) by the Licensor. Silence, the absence of
+     enforcement, or acceptance of a Contribution does not constitute
+     permission.
+
+
+SECTION 18. GENERAL PROVISIONS
+
+18.1 Acceptance. By doing any act with the Work other than viewing it under
+     Section 3.1, You accept this License. If You do not accept it, You must
+     not do any such act.
+
+18.2 Severability. If any provision of this License is held invalid or
+     unenforceable, it shall be enforced to the maximum extent permissible and
+     replaced by a valid provision that comes closest to its purpose, and the
+     remaining provisions remain in full force.
+
+18.3 No waiver. A failure or delay in exercising any right is not a waiver of
+     it. A waiver is effective only in writing and only for the specific case.
+
+18.4 Entire agreement. This License is the entire agreement between You and the
+     Licensor about the Work, unless a separate written agreement signed by the
+     Licensor states that it prevails.
+
+18.5 Changes. The Licensor may publish new versions of this License. The
+     version in force at the time of an act governs that act. Permissions may
+     be narrowed, but a later version shall not retroactively make unlawful an
+     act that was permitted when it was done.
+
+18.6 Assignment. You may not assign or transfer this License or any right
+     under it. The Licensor may assign its rights and obligations in whole or
+     in part.
+
+18.7 Compliance with export control and sanctions. You must comply with all
+     export control and sanctions laws applicable to You and to the Work.
+
+18.8 Language. This License is drawn up in English. Any translation is for
+     convenience only; the English text prevails.
+
+18.9 Interpretation. Headings are for convenience only. "Including" means
+     "including without limitation". The singular includes the plural.
+     References to laws include them as amended or replaced.
+
+18.10 Relationship. Nothing in this License creates a partnership, joint
+     venture, agency or employment relationship.
+
+END OF LICENSE

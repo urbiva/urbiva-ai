@@ -1,0 +1,10 @@
+[
+  {
+    "source_id": "example-own-capture",
+    "name": "Example: own street photos with documented consent",
+    "license": "own-capture-consented",
+    "commercial_use": true,
+    "url": "",
+    "notes": "Illustrative entry for the schema. Not a real dataset."
+  }
+]

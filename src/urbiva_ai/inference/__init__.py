@@ -1,1 +1,1 @@
-"""urbiva_ai.inference: placeholder package. No implementation in the setup phase; see docs/."""
+"""Inference: the app contract (contract), predictor (predictor), ONNX export (export), local server (server)."""

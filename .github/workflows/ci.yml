@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Lint and test (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install CPU PyTorch
+        run: pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install package
+        run: pip install --no-cache-dir -e ".[dev]"
+      - name: Lint
+        run: ruff check src tests
+      - name: Test
+        run: pytest
+      - name: Validate template configuration
+        run: urbiva-ai validate-config configs/uva_net_s10.template.yaml
+      - name: Parameter budget
+        run: urbiva-ai params --width 1.0

@@ -1,19 +1,36 @@
-# Template only. Not a tested configuration; values marked TBD must be decided in an experiment record.
-experiment_id: TBD
+# UVA-Net S10 experiment configuration template.
+# Valid as written (urbiva-ai validate-config configs/uva_net_s10.template.yaml).
+# The values are starting points, not tuned results. Copy this file, set
+# experiment_id and dataset_version, and record every change in experiments/.
+experiment_id: uva-s10-baseline
 model:
   name: uva-net-s10
-  max_parameters: 10_000_000      # hard constraint
-  backbone: TBD
-  input_size: TBD
-  num_classes: 7                  # stairs, blocked_path, broken_surface, curb, obstruction, other, none
+  width_multiplier: 1.0        # 1.0 gives 3,963,191 parameters; widths above 1.5 exceed 10M
+  input_size: 320              # multiple of 32
+  dropout: 0.2
+  num_classes: 7               # stairs, blocked_path, broken_surface, curb, obstruction, other, none
+  max_parameters: 10000000     # hard constraint
 data:
-  dataset_version: TBD
-  split_file: TBD
+  manifest: datasets/manifests/train.jsonl
+  val_manifest: datasets/manifests/val.jsonl
+  test_manifest: datasets/manifests/test.jsonl
+  image_root: datasets/processed
+  dataset_version: unset
+  num_workers: 4
 training:
-  seed: TBD
-  epochs: TBD
-  batch_size: TBD
-  gpu_hour_budget: TBD            # share of the ~10 GH200 GPU-hours
+  seed: 1337
+  epochs: 40
+  batch_size: 64
+  learning_rate: 0.002
+  weight_decay: 0.05
+  warmup_epochs: 2
+  label_smoothing: 0.05
+  mixed_precision: true
+  early_stopping_patience: 6
+  gpu_hour_budget: 2.0         # share of the ~10 GH200 GPU-hours
+  num_gpus: 1
+  output_dir: runs
 evaluation:
   primary_metric: false_positive_rate
-  operating_threshold: chosen_on_validation
+  target_false_positive_rate: 0.05
+  calibration_bins: 15

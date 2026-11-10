@@ -1,6 +1,6 @@
 # Architecture goals for UVA-Net S10
 
-Status: **planned**. Nothing in this document has been implemented or measured.
+Status: **implemented in code, not trained.** The design below exists in `src/urbiva_ai/models/uva_net.py`. Nothing has been trained or measured.
 
 ## Requirements
 
@@ -30,3 +30,18 @@ Status: **planned**. Nothing in this document has been implemented or measured.
 - Video, 3D or depth estimation.
 - Measuring slopes or widths from a single photo (the app already tells users this is not reliable).
 - Replacing human confirmation.
+
+## Implemented design (version 0.1)
+
+| Part | Choice | Why |
+| --- | --- | --- |
+| Stem | 3x3 convolution, stride 2, 16 channels, hard-swish | Cheap early downsampling |
+| Body | 15 inverted residual blocks (kernels 3 and 5, expansion up to 6x, strides at 4 stages) | Strong accuracy per parameter on mobile hardware |
+| Attention | Squeeze-and-excitation in 9 of 15 blocks | Channel reweighting at small cost |
+| Head | 1x1 convolution to 6x channels, global pooling, 1024-unit layer, dropout, 7 logits | Compact classifier over the app taxonomy |
+| Width multiplier | 0.25 to 1.5 within budget | One knob for the size and latency trade-off |
+| Size check | `build_model` raises if parameters exceed 10,000,000 | The constraint cannot be broken by configuration |
+
+Parameter counts computed from the architecture: width 0.5 gives 1,285,455; width 1.0 gives 3,963,191; width 1.5 gives 8,112,247. Width 1.75 gives 10,733,967 and is refused.
+
+Training choices: AdamW with warmup and cosine decay, label smoothing 0.05, inverse-frequency class weights, mixed precision on GPU, gradient clipping, early stopping on the validation false-positive rate at the target operating point. Augmentation is horizontal flip, colour jitter and mild crops; no vertical flips, because stairs have a direction.

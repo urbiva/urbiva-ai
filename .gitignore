@@ -33,3 +33,6 @@ lightning_logs/
 .DS_Store
 .idea/
 .vscode/
+.pytest_cache/
+.ruff_cache/
+reports/

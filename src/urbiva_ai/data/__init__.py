@@ -1,1 +1,1 @@
-"""urbiva_ai.data: placeholder package. No implementation in the setup phase; see docs/."""
+"""Data: manifests and provenance (manifest), preprocessing (transforms), PyTorch dataset (dataset)."""

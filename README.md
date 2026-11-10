@@ -88,6 +88,15 @@ tests/          Unit tests (empty)
 
 Use `feat/*`, `fix/*`, `docs/*` and `chore/*` branches and open pull requests into `main`. Never commit datasets, weights, credentials or personal data. See the organization-wide contributing guide in `urbiva/.github`.
 
+## Urbiva repositories
+
+| Repository | Purpose |
+| --- | --- |
+| [`urbiva-app`](https://github.com/urbiva/urbiva-app) | Application: Go, Vision, Urban and Impact |
+| **urbiva-ai** | Research setup for UVA-Net S10, a planned local vision model |
+| [`urbiva-brand`](https://github.com/urbiva/urbiva-brand) | Logo package, tokens, guidelines and GitHub brand kit |
+| [`urbiva-docs`](https://github.com/urbiva/urbiva-docs) | Product specifications, architecture, decisions and roadmap |
+
 ## License
 
-Private repository. All rights reserved by Urbiva. Third-party dataset licences are tracked in [datasets/LICENSES.md](datasets/LICENSES.md).
+Private repository. All rights reserved by Urbiva. See [LICENSE](LICENSE). Third-party dataset licenses are tracked in [datasets/LICENSES.md](datasets/LICENSES.md).

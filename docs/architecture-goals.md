@@ -5,7 +5,7 @@ Status: **implemented in code, not trained.** The design below exists in `src/ur
 ## Requirements
 
 1. At most 10 million trainable parameters, counted with the classification head.
-2. Real-time capable inference on a single modern CPU core or a small GPU; exact latency targets will be set after a baseline exists.
+2. Inference latency at p50 of at most 100 ms per image on one modern CPU core at 320 x 320 input, measured with `urbiva-ai benchmark` (the result does not depend on training).
 3. Input: one RGB street-level photo, re-encoded by the app to JPEG with the long side at most 1280 px.
 4. Output: a probability per barrier category plus a calibrated "no barrier" score, so the app can abstain and fall back to manual classification.
 5. Calibrated confidence, because the product decision depends on keeping false positives low.

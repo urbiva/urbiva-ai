@@ -11,4 +11,4 @@ Licensed under the Urbiva Proprietary License 1.0. See LICENSE.
 from urbiva_ai.labels import CATEGORIES, NONE_CATEGORY, BARRIER_CATEGORIES
 
 __all__ = ["CATEGORIES", "NONE_CATEGORY", "BARRIER_CATEGORIES", "__version__"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"

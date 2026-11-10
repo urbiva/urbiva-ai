@@ -2,6 +2,14 @@
 
 All notable changes to this repository. Dates are ISO 8601.
 
+## [0.1.1] - 2026-11-10
+
+### Added
+- `urbiva-ai benchmark`: CPU latency measurement against the 100 ms p50 target.
+- Training refuses to start without a recorded dataset version.
+- Experiment record template, concrete GPU and CPU allocation plan, licence acceptance rules.
+- Dependabot configuration.
+
 ## [0.1.0] - 2026-11-10
 
 ### Added

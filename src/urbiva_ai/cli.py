@@ -34,13 +34,21 @@ def _cmd_params(a: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_benchmark(a: argparse.Namespace) -> int:
+    from urbiva_ai.models.benchmark import benchmark
+
+    print(json.dumps(benchmark(a.width, a.size, a.iterations, a.threads), indent=2))
+    return 0
+
+
 def _cmd_train(a: argparse.Namespace) -> int:
-    from urbiva_ai.config import load
+    from urbiva_ai.config import load, require_dataset
     from urbiva_ai.data.dataset import BarrierDataset
     from urbiva_ai.data.manifest import load_sources, read_manifest, validate
     from urbiva_ai.training.trainer import train
 
     cfg = load(a.config)
+    require_dataset(cfg)
     sources = load_sources(a.sources)
     tr = list(read_manifest(cfg.data.manifest))
     va = list(read_manifest(cfg.data.val_manifest))
@@ -106,6 +114,13 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("params", help="count model parameters (requires torch)")
     s.add_argument("--width", type=float, default=1.0)
     s.set_defaults(func=_cmd_params)
+
+    s = sub.add_parser("benchmark", help="measure CPU inference latency (requires torch)")
+    s.add_argument("--width", type=float, default=1.0)
+    s.add_argument("--size", type=int, default=320)
+    s.add_argument("--iterations", type=int, default=50)
+    s.add_argument("--threads", type=int, default=1)
+    s.set_defaults(func=_cmd_benchmark)
 
     s = sub.add_parser("train", help="train UVA-Net S10 (requires torch and data)")
     s.add_argument("config", type=Path)

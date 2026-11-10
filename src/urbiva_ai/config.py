@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -37,7 +38,7 @@ class DataConfig:
     val_manifest: str = "datasets/manifests/val.jsonl"
     test_manifest: str = "datasets/manifests/test.jsonl"
     image_root: str = "datasets/processed"
-    dataset_version: str = "unset"
+    dataset_version: str = "none"
     num_workers: int = 4
 
 
@@ -66,7 +67,7 @@ class EvaluationConfig:
 
 @dataclass
 class ExperimentConfig:
-    experiment_id: str = "unset"
+    experiment_id: str = "uva-s10-baseline"
     model: ModelConfig = field(default_factory=ModelConfig)
     data: DataConfig = field(default_factory=DataConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
@@ -91,7 +92,7 @@ def from_dict(raw: dict[str, Any]) -> ExperimentConfig:
     if top:
         raise ConfigError(f"unknown top-level keys: {sorted(top)}")
     cfg = ExperimentConfig(
-        experiment_id=str(raw.get("experiment_id", "unset")),
+        experiment_id=str(raw.get("experiment_id", "uva-s10-baseline")),
         model=_build(ModelConfig, raw.get("model"), "model"),
         data=_build(DataConfig, raw.get("data"), "data"),
         training=_build(TrainingConfig, raw.get("training"), "training"),
@@ -108,6 +109,15 @@ def load(path: str | Path) -> ExperimentConfig:
     if not isinstance(raw, dict):
         raise ConfigError("configuration root must be a mapping")
     return from_dict(raw)
+
+
+NO_DATASET = "none"
+
+
+def require_dataset(cfg: ExperimentConfig) -> None:
+    """Training and evaluation need a recorded dataset version."""
+    if cfg.data.dataset_version.strip().lower() in {"", NO_DATASET}:
+        raise ConfigError("data.dataset_version must name a recorded dataset version before training or evaluation")
 
 
 def validate(cfg: ExperimentConfig) -> None:
@@ -135,5 +145,7 @@ def validate(cfg: ExperimentConfig) -> None:
         raise ConfigError("training.num_gpus must be at least 1")
     if not 0.0 < e.target_false_positive_rate < 1.0:
         raise ConfigError("evaluation.target_false_positive_rate must be in (0, 1)")
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]{0,63}", cfg.experiment_id):
+        raise ConfigError("experiment_id must be 1 to 64 lowercase letters, digits, dots, dashes or underscores")
     if e.calibration_bins < 2:
         raise ConfigError("evaluation.calibration_bins must be at least 2")

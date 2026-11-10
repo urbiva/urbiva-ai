@@ -35,3 +35,18 @@ def test_template_config_is_valid():
 def test_invalid_configs_are_rejected(patch, msg):
     with pytest.raises(ConfigError, match=msg):
         from_dict(patch)
+
+
+def test_training_requires_a_dataset_version():
+    from urbiva_ai.config import require_dataset
+
+    cfg = load(ROOT / "configs" / "uva_net_s10.template.yaml")
+    with pytest.raises(ConfigError, match="dataset_version"):
+        require_dataset(cfg)
+    cfg.data.dataset_version = "zone-a-2027-01"
+    require_dataset(cfg)
+
+
+def test_experiment_id_format():
+    with pytest.raises(ConfigError, match="experiment_id"):
+        from_dict({"experiment_id": "Bad Id!"})

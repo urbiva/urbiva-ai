@@ -38,3 +38,5 @@ jobs:
         run: urbiva-ai validate-config configs/uva_net_s10.template.yaml
       - name: Parameter budget
         run: urbiva-ai params --width 1.0
+      - name: Latency benchmark (informative)
+        run: urbiva-ai benchmark --iterations 10

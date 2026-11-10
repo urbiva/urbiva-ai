@@ -43,9 +43,11 @@ Single-image classification of the barrier category on a sidewalk or crossing, w
 | --- | --- | --- |
 | Model size | at most 10 million parameters | Hard constraint, enforced in code |
 | GPU budget | about 10 GH200 GPU-hours | Allocation; the trainer stops before its configured share is used |
-| CPU budget | about 20 to 30 CPU-hours | Allocation; billing interpretation still to be verified |
+| CPU budget | about 20 to 30 CPU-hours | Allocation; planning uses the lower bound of 20 CPU-hours |
 | Initial dataset | about 40,000 suitable annotated images | Target |
-| Quality | low false-positive rate; strong precision and recall | Goal, thresholds not yet set |
+| Operating point | barrier false-positive rate at most 5 % on validation | Default in code (`target_false_positive_rate`), configurable |
+| Latency | p50 at most 100 ms per image on one CPU core at 320 px | Target, measured with `urbiva-ai benchmark` |
+| Reporting | per-class precision, recall and F1, macro F1, calibration error | Produced by `urbiva-ai evaluate` |
 
 Details: [docs/compute-budget.md](docs/compute-budget.md).
 
@@ -68,7 +70,8 @@ urbiva-ai params --width 1.0
 | `urbiva-ai validate-config CONFIG` | Checks a configuration against every constraint | core |
 | `urbiva-ai validate-manifest MANIFEST --sources SOURCES` | Checks records, licences, privacy flags and duplicates | core |
 | `urbiva-ai params --width W` | Counts parameters and reports the budget check | torch |
-| `urbiva-ai train CONFIG --sources SOURCES` | Trains with seeding, early stopping and the GPU-hour guard | torch, data |
+| `urbiva-ai benchmark` | Measures CPU latency against the 100 ms target | torch |
+| `urbiva-ai train CONFIG --sources SOURCES` | Trains with seeding, early stopping and the GPU-hour guard; refuses to start without a recorded dataset version | torch, data |
 | `urbiva-ai evaluate CHECKPOINT` | Writes `report.json` and `report.md` from measured predictions | torch, data |
 | `urbiva-ai export CHECKPOINT` | Exports ONNX for CPU serving | torch, onnx |
 | `urbiva-ai serve [--checkpoint CKPT]` | Serves `POST /api/vision`; answers `not_configured` without a model | core (torch with a model) |
@@ -91,7 +94,7 @@ tests/          Unit tests (torch tests run in CI)
 
 | Document | Purpose |
 | --- | --- |
-| [Architecture goals](docs/architecture-goals.md) | Design of UVA-Net S10 and open questions |
+| [Architecture goals](docs/architecture-goals.md) | Design of UVA-Net S10 and research questions |
 | [Compute budget](docs/compute-budget.md) | GPU and CPU allocation, how it is spent and guarded |
 | [Dataset strategy](docs/dataset-strategy.md) | Sources, annotation, privacy, splits |
 | [Evaluation methodology](docs/evaluation.md) | Metrics, false-positive focus, test protocol |

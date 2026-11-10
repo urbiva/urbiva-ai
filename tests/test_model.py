@@ -38,3 +38,10 @@ def test_training_step_reduces_loss():
         opt.step()
         first = first if first is not None else float(loss)
     assert float(loss) < first
+
+
+def test_benchmark_reports_latency():
+    from urbiva_ai.models.benchmark import benchmark
+
+    r = benchmark(width=0.5, size=96, iterations=2, threads=1, warmup=1)
+    assert r["parameters"] < 10_000_000 and r["latency_ms_p50"] > 0

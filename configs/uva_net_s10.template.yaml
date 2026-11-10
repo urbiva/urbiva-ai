@@ -15,7 +15,7 @@ data:
   val_manifest: datasets/manifests/val.jsonl
   test_manifest: datasets/manifests/test.jsonl
   image_root: datasets/processed
-  dataset_version: unset
+  dataset_version: none        # set to a recorded version from datasets/; training refuses "none"
   num_workers: 4
 training:
   seed: 1337

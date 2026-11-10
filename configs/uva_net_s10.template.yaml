@@ -1,0 +1,19 @@
+# Template only. Not a tested configuration; values marked TBD must be decided in an experiment record.
+experiment_id: TBD
+model:
+  name: uva-net-s10
+  max_parameters: 10_000_000      # hard constraint
+  backbone: TBD
+  input_size: TBD
+  num_classes: 7                  # stairs, blocked_path, broken_surface, curb, obstruction, other, none
+data:
+  dataset_version: TBD
+  split_file: TBD
+training:
+  seed: TBD
+  epochs: TBD
+  batch_size: TBD
+  gpu_hour_budget: TBD            # share of the ~10 GH200 GPU-hours
+evaluation:
+  primary_metric: false_positive_rate
+  operating_threshold: chosen_on_validation

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Data and artifacts: never commit datasets, weights or run outputs
+datasets/raw/
+datasets/interim/
+datasets/processed/
+*.zip
+*.tar
+*.tar.gz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+*.tflite
+runs/
+outputs/
+wandb/
+mlruns/
+lightning_logs/
+.ipynb_checkpoints/
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
